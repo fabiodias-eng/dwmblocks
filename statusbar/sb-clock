@@ -1,0 +1,7 @@
+#!/bin/sh
+
+font_color=^c#1d2021^ # black
+bg_color=^b#cab699^ # white
+date_str=$(date '+%H:%M %d-%m')
+echo $font_color$bg_color $date_str ^d^
+

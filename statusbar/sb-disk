@@ -1,0 +1,5 @@
+#!/bin/sh
+font_color=^c#1d2021^ # black
+bg_color=^b#d79921^ # yellow
+disk=$(df -h / | awk 'NR==2 {print $3 "/" $2}')
+echo $font_color$bg_color DSK $disk ^d^

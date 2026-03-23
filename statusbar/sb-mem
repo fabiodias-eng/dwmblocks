@@ -1,0 +1,6 @@
+#!/bin/sh
+font_color=^c#ebdbb2^ # black
+bg_color=^b#cc241d^ # red
+mem=$(free -h | awk '/^Mem/ {print $3 "/" $2}' | sed 's/i//g')
+
+echo $font_color$bg_color MEM $mem ^d^

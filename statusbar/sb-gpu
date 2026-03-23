@@ -1,0 +1,13 @@
+#!/bin/sh
+
+command -v nvidia-smi >/dev/null 2>&1 || {
+    printf "^c#928374^ GPU N/A ^d^ ^f10^\n"
+    exit
+}
+
+font_color=^c#1d2021^ # black
+bg_color=^b#98971a^ # green
+gpu_usage=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits)
+gpu_temp=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+
+echo $font_color$bg_color GPU $gpu_usage% $gpu_temp°C ^d^

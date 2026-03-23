@@ -1,0 +1,4 @@
+#!/bin/sh
+uptime=$(uptime -p | sed 's/^up //')
+
+# echo "^c#98971a^UPT^d^ ^c#ebdbb2^$uptime^d^"

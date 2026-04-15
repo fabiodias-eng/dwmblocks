@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# CPU usage
+### CPU usage ###
 read cpu user nice system idle iowait irq softirq steal guest guest_nice < /proc/stat
 total1=$((user + nice + system + idle + iowait + irq + softirq + steal))
 idle1=$((idle + iowait))
@@ -11,14 +11,14 @@ read cpu user nice system idle iowait irq softirq steal guest guest_nice < /proc
 total2=$((user + nice + system + idle + iowait + irq + softirq + steal))
 idle2=$((idle + iowait))
 
-cpu_usage=$((100 * ((total2 - total1) - (idle2 - idle1)) / (total2 - total1)))
+delta_total=$((total2 - total1))
+delta_idle=$((idle2 - idle1))
 
-# CPU temperature
-if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
-    cpu_temp=$(( $(cat /sys/class/thermal/thermal_zone0/temp) / 1000 ))
-else
-    cpu_temp="N/A"
-fi
+cpu_usage=$((100 * (delta_total - delta_idle) / (delta_total)))
+
+
+### CPU temperature ###
+cpu_temp=$(sensors | awk '/Package id 0/ {print int($4)}/Tctl/ {print $2}' | head -n1 | tr -d '+°C')
 
 font_color=^c#ebdbb2^
 bg_color=^b#458588^ # blue

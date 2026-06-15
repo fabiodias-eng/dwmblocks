@@ -2,8 +2,8 @@
 
 command -v nvidia-smi >/dev/null 2>&1 || exit 
 
-font_color=^c#b8bb261^ 
-bg_color=^b#282828^
+font_color=^c@FG_GPU@1^ 
+bg_color=^b@BG_GPU@^
 gpu_usage=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits)
 gpu_temp=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
 

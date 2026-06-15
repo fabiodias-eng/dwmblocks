@@ -1,13 +1,13 @@
 #!/bin/sh
-font_color=^c#fabd2f^
-bg_color=^b#282828^
+font_color=^c@FG_DISK@^
+bg_color=^b@BG_DISK@^
 
 disk=$(df -h / | awk 'NR==2 {print $5}')
 
 echo "${font_color}${bg_color} DSK ${disk} ^d^"
 
 # Current / Total
-# font_color=^c#fabd2f^
-# bg_color=^b#282828^
+# font_color=^c@FG_DISK@^
+# bg_color=^b@BG_DISK@^
 # disk=$(df -h / | awk 'NR==2 {print $3 "/" $2}')
 # echo $font_color$bg_color DSK $disk ^d^

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+weather=$(curl -s 'wttr.in?format=%t+%C')
+weather=${weather#+}
+weather=${weather//°/}
+
+temp=$(echo "$weather" | awk '{print $1}')
+cond=$(echo "$weather" | cut -d' ' -f2-)
+cond=${cond,,}
+
+case "$cond" in
+    *sunny*|*clear*)
+        cond="Sun"
+        ;;
+    *cloud*)
+        cond="Cloudy"
+        ;;
+    *overcast*)
+        cond="Overcast"
+        ;;
+    *rain*)
+        cond="Rain"
+        ;;
+    *drizzle*)
+        cond="Drizzle"
+        ;;
+    *thunder*)
+        cond="Storm"
+        ;;
+    *snow*)
+        cond="Snow"
+        ;;
+    *mist*|*fog*)
+        cond="Fog"
+        ;;
+esac
+
+font_color=^c@FG_WTR@^
+bg_color=^b@BG_WTR@^
+echo " ${font_color}${bg_color}${temp}-${cond} ^d^"

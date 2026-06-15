@@ -20,6 +20,6 @@ cpu_usage=$((100 * (delta_total - delta_idle) / (delta_total)))
 ### CPU temperature ###
 cpu_temp=$(sensors | awk '/Package id 0/ {print int($4)}/Tctl/ {print $2}' | head -n1 | tr -d '+°C')
 
-font_color=^c#458588^
-bg_color=^b#282828^
+font_color=^c@FG_CPU@^
+bg_color=^b@BG_CPU@^
 echo $font_color$bg_color CPU $cpu_usage% $cpu_temp°C ^d^

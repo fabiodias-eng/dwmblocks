@@ -1,56 +1,15 @@
-# Custom blocks file
+*
 
+!.gitignore
 
-# Prerequisites
-*.d
+!LICENSE
+!README.md
+!Makefile
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+!blocks.h
+!blocks.def.h
 
-# Linker output
-*.ilk
-*.map
-*.exp
+!dwmblocks.c
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-dwmblocks
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+!statusbar/
+!statusbar/**

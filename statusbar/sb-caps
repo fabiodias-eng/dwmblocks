@@ -1,0 +1,8 @@
+#!/bin/bash
+font_color=^c#282828^
+bg_color=^b#cc241d^
+
+PRESS_CAPS=$(xset q | awk '/Caps Lock/ {print $4}')
+if [ "$PRESS_CAPS" == "on" ]; then
+    echo "$font_color$bg_color""   󰘲   ^d^"
+fi

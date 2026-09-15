@@ -5,6 +5,7 @@
 // recompile using the make command.
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
+    {"", "sb-caps", 1, 0},
     {"", "sb-cpu", 1, 0},
     {"", "sb-gpu", 1, 0},
     {"", "sb-mem", 1, 0},

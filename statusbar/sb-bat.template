@@ -5,9 +5,10 @@ BATTERY_PATH="$(find_battery)"
 if [ -f "$BATTERY_PATH/capacity" ]; then
     capacity=$(cat "$BATTERY_PATH/capacity")
 else
+    exit 1
     capacity="ERR"
 fi
 
-font_color=^c@FG_BAT@^ 
+font_color=^c@FG_BAT@^
 bg_color=^b@BG_BAT@^
 echo $font_color$bg_color BAT $capacity% ^d^

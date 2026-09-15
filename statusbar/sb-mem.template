@@ -5,7 +5,7 @@ bg_color=^b@BG_MEM@^
 
 mem=$(free | awk '/^Mem:/ {printf "%.0f%%", $3/$2 * 100}')
 
-echo "${font_color}${bg_color} MEM ${mem} ^d^"
+echo "${font_color}${bg_color}""MEM ${mem} ^d^"
 
 # CURRENT / TOTAL
 # font_color=^c@FG_MEM@^

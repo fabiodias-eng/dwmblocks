@@ -2,6 +2,5 @@
 
 font_color=^c#a89984^
 bg_color=^b#282828^
-date_str=$(date '+%H:%M %d-%m')
-echo "$font_color$bg_color $date_str ^d^"
-
+date_str=$(date '+%H:%M')
+echo "$font_color$bg_color""$date_str ^d^"

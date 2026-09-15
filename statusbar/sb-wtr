@@ -9,32 +9,32 @@ cond=$(echo "$weather" | cut -d' ' -f2-)
 cond=${cond,,}
 
 case "$cond" in
-    *sunny*|*clear*)
-        cond="Sun"
-        ;;
-    *cloud*)
-        cond="Cloudy"
-        ;;
-    *overcast*)
-        cond="Overcast"
-        ;;
-    *rain*)
-        cond="Rain"
-        ;;
-    *drizzle*)
-        cond="Drizzle"
-        ;;
-    *thunder*)
-        cond="Storm"
-        ;;
-    *snow*)
-        cond="Snow"
-        ;;
-    *mist*|*fog*)
-        cond="Fog"
-        ;;
+*sunny* | *clear*)
+    cond="Sun"
+    ;;
+*cloud*)
+    cond="Cloudy"
+    ;;
+*overcast*)
+    cond="Overcast"
+    ;;
+*rain*)
+    cond="Rain"
+    ;;
+*drizzle*)
+    cond="Drizzle"
+    ;;
+*thunder*)
+    cond="Storm"
+    ;;
+*snow*)
+    cond="Snow"
+    ;;
+*mist* | *fog*)
+    cond="Fog"
+    ;;
 esac
 
 font_color=^c#b16286^
 bg_color=^b#282828^
-echo " ${font_color}${bg_color}${temp}-${cond} ^d^"
+echo "${font_color}${bg_color}""${temp}°${cond} ^d^"

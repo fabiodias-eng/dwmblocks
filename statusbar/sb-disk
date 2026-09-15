@@ -4,7 +4,7 @@ bg_color=^b#282828^
 
 disk=$(df -h / | awk 'NR==2 {print $5}')
 
-echo "${font_color}${bg_color} DSK ${disk} ^d^"
+echo "${font_color}${bg_color}""DSK ${disk} ^d^"
 
 # Current / Total
 # font_color=^c#fabd2f^
